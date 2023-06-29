@@ -32,7 +32,7 @@ list_th = [[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]],\
 
 ## Dictionary
 
-##### 🔶 key와 value를 추가하는 함수 : setdfault(), update()
+##### key와 value를 추가하는 함수 : setdfault(), update()
 
 ```python
 setdfault() # 이미 해당 key가 있을 때: 그 key의 value를 반환
@@ -47,8 +47,8 @@ update() # 특정 key-value 조합을 삽입
 > 반면 update() 함수는 기존의 value 값과 상관없이 딕셔너리의 데이터를 업데이트합니다.
 
 
-##### 🔶 key-value 삭제하는 함수 : pop(), popitem()
-##### 🔶 딕셔너리 생성하는 함수 :  fromkeys()  
+##### key-value 삭제하는 함수 : pop(), popitem()
+##### 딕셔너리 생성하는 함수 :  fromkeys()  
 
 
 
@@ -61,7 +61,7 @@ ___
 
 ## List Comprehension
 
-### 🔶 반복문과 컴프리헨션
+🔶 반복문과 컴프리헨션
 
 <img width="600" alt="Screenshot 2023-06-29 at 8 32 53 AM" src="https://github.com/LaVita337/DH_Log/assets/107906605/294b4d54-5545-407e-ab6a-785d021bdae5">
 
@@ -98,8 +98,8 @@ ___
 
 ```python
 # 단짠단짠 조합
-sweetie = ['아이스크림', '크림빵', '젤리']
-savory = ['감자칩', '팝콘', '뿌셔뿌셔'] 
+items = ['a', 'b', 'c']
+words = ['hi', 'halo', 'hello'] 
 
 [[x, y] for x in sweetie for y in savory]
 ```
@@ -112,10 +112,17 @@ savory = ['감자칩', '팝콘', '뿌셔뿌셔']
 
 
 
+🔶 딕셔너리 컴프리헨션
 
+중괄호를 이용하면서 동시에 key:value의 형태로 내용을 채운다면 딕셔너리 컴프리헨션이 됨. 
+리스트 함수에서 배웠던 zip() 함수를 활용해서 키와 밸류를 지정하면 됩니다
 
-
-
+```python
+# {이름:나이} 딕셔너리
+user_name = ['a', 'b', 'c', d'']
+user_age = [10, 20, 30, 40] 
+{k:v for k, v in zip(user_name, user_age)}
+```
 
 
 
