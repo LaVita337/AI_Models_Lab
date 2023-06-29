@@ -97,11 +97,10 @@ ___
 - 컴프리헨션에 for문과 if문을 중복해서 쓸 수 있다.
 
 ```python
-# 단짠단짠 조합
 items = ['a', 'b', 'c']
 words = ['hi', 'halo', 'hello'] 
 
-[[x, y] for x in sweetie for y in savory]
+[[x, y] for x in items for y in words]
 ```
 ### 셋 컴프리헨션 & 딕셔너리 컴프리헨션
 
