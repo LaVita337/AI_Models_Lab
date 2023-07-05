@@ -1,0 +1,50 @@
+# 클래스와 객체
+
+> 클래스(Class)는 무엇을 계속 만들어 내는 틀에 비유됨.
+> 그 이유는 클래스는 객체(Object) 를 정의하고 만들기 위한 변수와 메서드의 집합이기 때문입니다.
+
+
+<img width="500" alt="Screenshot 2023-07-05 at 3 06 25 PM" src="https://github.com/LaVita337/DH_Log/assets/107906605/dd2c119d-fd33-4fcf-8f90-a4fa0296716d">
+
+```
+객체: 클래스에서 객체란 클래스에 선언한 모양 그대로 생성되는 대상이며, 모든 인스턴스를 포함하는 개념입니다.
+객체 지향 프로그램의 관점에서는 클래스의 타입으로 선언되면 객체입니다.
+
+인스턴스: 클래스로 구현된 구체적인 실체이고, 객체를 실체화하면 인스턴스가 됩니다.
+객체 지향 프로그램의 관점에서는 객체가 메모리에 할당되어 실제로 사용되면 인스턴스입니다.
+```
+
+## 클래스, 메서드, 객체
+
+### 클래스 만들기
+```python
+class 클래스이름:
+    def 메서드이름(self): # 매개변수는 꼭 self를 넣어줘야 함
+        명령블록
+```
+
+### 생성자, 속성
+```python
+class Aiffel:
+    def __init__(self, name):  # 생성자 안에 속성 (__가 붙은 메서드는 파이썬이 자동으로 호출해주는 메서드로,
+                               # 스페셜 메서드(special method) 또는 매직 메서드(magic method)라고 부름.
+        self.name = name
+    def cheer(self):
+        print(f"{self.name}, 끝까지 화이팅!")
+```
+
+
+<img width="600" alt="Screenshot 2023-07-05 at 3 24 52 PM" src="https://github.com/LaVita337/DH_Log/assets/107906605/5b442cdf-a5e5-4c05-b4fe-8463d0f411b5">
+
+
+
+<img width="600" alt="Screenshot 2023-07-05 at 3 25 51 PM" src="https://github.com/LaVita337/DH_Log/assets/107906605/04b619bb-b920-4d84-8b73-9e44e2ff34ae">
+
+
+### self의 동작순서
+
+1. 클래스에 속성값을 넣은 객체를 만든다.
+2. 그러면 자동으로 __init__ 생성자가 호출되면서 매개변수 self에 해당 객체가 입력됩니다. 다음 매개변수에는 속성값이 들어간다.
+3. 그 후 self.???이 해당객체.속성값' 으로 완성된 뒤 이 속성이 해당객체에 할당된다.
+4. 해당 객체의 메서드가 호출된다.
+5. 현재 객체가 매개변수 self에 들어간다.
