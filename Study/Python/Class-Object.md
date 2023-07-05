@@ -48,3 +48,37 @@ class Aiffel:
 3. 그 후 self.???이 해당객체.속성값' 으로 완성된 뒤 이 속성이 해당객체에 할당된다.
 4. 해당 객체의 메서드가 호출된다.
 5. 현재 객체가 매개변수 self에 들어간다.
+
+
+## 상속
+
+> 클래스에도 부모 - 자식 관계가 있어서 부모 클래스가 자식 클래스에게 속성(데이터)과 메서드(함수)를 상속한다
+
+  - 부모 클래스: Parent class 또는 Super class
+  - 자식 클래스: Child class 또는 Sub class
+
+```python
+class Parent: 
+    # 속성
+    def __init__(self):
+         self.name = 'Dave'
+         self.city = 'Seoul'
+
+    # 메서드
+    def identify(self):
+         print('say:')
+
+class Child(Parent):
+    def __init__(self, name):
+         self.name = name
+    def identify_name(self):
+        print('my name is', self.name)
+    def identify_city(self):
+         print('now I'm living in', self.city)
+```
+
+
+> 부모 클래스의 인스턴스 속성은 부모 클래스의 객체가 생성될 때 __init__()이 실행되면서 생성된다.
+> 하지만 자식 클래스를 생성할 때에 부모 클래스의 __init__() 함수가 실행되지는 않기 때문에 인스턴스 속성은 자식 클래스에 상속되지 않는다.
+> 만약 부모 클래스의 인스턴스 속성을 자식 클래스에서도 사용하기를 원한다면 super().__init__() 함수를 사용하여 부모 클래스의 __init__()를 자식 클래스의 __init__()에서 실행시켜야 한다.
+
