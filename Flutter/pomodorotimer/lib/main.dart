@@ -10,7 +10,12 @@ class PomodoroApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pomodoro Timer',
-      theme: ThemeData(primarySwatch: Colors.green, textTheme: TextTheme()),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.green,
+        ),
+      ),
       home: PomodoroTimer(),
     );
   }
