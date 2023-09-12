@@ -14,9 +14,10 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  int _counter = 0;
+
   @override
   Widget build(BuildContext context) {
-    int counter = 0;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter State Counter'),
@@ -26,17 +27,18 @@ class _HomePageState extends State<HomePage> {
           totalRepeatCount: 1,
           animatedTexts: [
             TypewriterAnimatedText(
-              "Counter is now : $counter",
-              textStyle: const TextStyle(fontSize: 60.0),
-              speed: const Duration(milliseconds: 100),
+              "Counter is now : $_counter",
+              textStyle: const TextStyle(fontSize: 30.0),
+              speed: const Duration(milliseconds: 50),
             ),
           ],
+          repeatForever: true,
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            counter++;
+            _counter++;
           });
         },
         child: const Icon(Icons.add),

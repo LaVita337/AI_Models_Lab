@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(fontFamily: 'AirbnbCereal'),
         routes: {
           '/': (context) => HomePage(),
-          '/seoul': (context) => SeoulDetail(),
+          '/seoul': (context) => const SeoulDetail(),
         });
   }
 }

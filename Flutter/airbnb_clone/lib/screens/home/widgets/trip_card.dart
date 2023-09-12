@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class TripCard extends StatelessWidget {
   TripCard({super.key});
 
-  Image img_0 = Image.asset('images/seoul.webp');
-  Image img_1 = Image.asset('images/busan.webp');
-  Image img_2 = Image.asset('images/chuncheon.webp');
+  final Image img_0 = Image.asset('images/seoul.webp');
+  final Image img_1 = Image.asset('images/busan.webp');
+  final Image img_2 = Image.asset('images/chuncheon.webp');
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class TripCard extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     'Seoul, Republic of Korea',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
@@ -138,7 +138,7 @@ class TripCard extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   'Busan, Republic of Korea',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
@@ -229,7 +229,7 @@ class TripCard extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   'chuncheon, Republic of Korea',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
