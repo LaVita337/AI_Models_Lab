@@ -45,7 +45,7 @@ class TodoListItem extends StatelessWidget {
             BoxShadow(
               color: Colors.grey,
               blurStyle: BlurStyle.normal,
-              offset: Offset(0, 5),
+              offset: Offset(1, 2.2),
             ),
           ],
         ),
