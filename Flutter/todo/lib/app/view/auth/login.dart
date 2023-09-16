@@ -1,57 +1,80 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:todo/app/service/auth_service.dart';
+import 'package:tiktok_practice/app/data/service/auth_service.dart';
+import 'package:tiktok_practice/app/view/auth/signup.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class LoginScreen extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  void login() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Login'),
+        backgroundColor: Colors.black,
+        title: Text(
+          'Login',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
+      backgroundColor: Colors.white,
       body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _emailController,
-                decoration: const InputDecoration(labelText: 'Email'),
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: emailController,
+              decoration: InputDecoration(
+                labelText: 'Email',
               ),
-              TextFormField(
-                controller: _passwordController,
-                decoration: const InputDecoration(labelText: 'Password'),
-                obscureText: true,
+            ),
+            SizedBox(height: 16.0),
+            TextField(
+              controller: passwordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: 'Password',
               ),
-              const SizedBox(
-                height: 50,
+            ),
+            SizedBox(height: 24.0),
+            ElevatedButton(
+              onPressed: () {
+                String email = emailController.text;
+                String password = passwordController.text;
+                signInWithEmail(email, password, context);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.pink,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  loginWithEmailAndPassword(
-                      _auth, _emailController.text, _passwordController.text);
-                },
-                child: const Text('Login'),
+              child: Text(
+                'Log In',
+                style: TextStyle(color: Colors.white),
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/register');
-                },
-                child: const Text('Register'),
+            ),
+            SizedBox(height: 16.0),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RegisterScreen(),
+                  ),
+                );
+              },
+              child: Text(
+                'Register',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.grey,
+                ),
               ),
-            ],
-          )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

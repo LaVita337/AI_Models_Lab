@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,39 +49,21 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA2Fk1LpCO1BX7IDSA7TGKFIRAuH4tMg1o',
-    appId: '1:408021366021:web:3d1be55120065aa2ec736c',
-    messagingSenderId: '408021366021',
-    projectId: 'todoapp-64a62',
-    authDomain: 'todoapp-64a62.firebaseapp.com',
-    storageBucket: 'todoapp-64a62.appspot.com',
-    measurementId: 'G-ZWSK6QXK2M',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBfPXLrn9tUv2WYdW4W2XnTrspaR5JBzGs',
-    appId: '1:408021366021:android:03aedd44e7e6bdb9ec736c',
-    messagingSenderId: '408021366021',
-    projectId: 'todoapp-64a62',
-    storageBucket: 'todoapp-64a62.appspot.com',
+    apiKey: 'AIzaSyAywsMVlxYbzY0sAttDd-9JZskZCUQUM4M',
+    appId: '1:587119900259:android:1a4306d3ab59cede2b2a56',
+    messagingSenderId: '587119900259',
+    projectId: 'tiktok-12a13',
+    storageBucket: 'tiktok-12a13.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyABSc4FXvCiz-4j_dD_GGUzM447UD39Hzo',
-    appId: '1:408021366021:ios:5443d09ad6e6db51ec736c',
-    messagingSenderId: '408021366021',
-    projectId: 'todoapp-64a62',
-    storageBucket: 'todoapp-64a62.appspot.com',
-    iosBundleId: 'com.example.todo',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyABSc4FXvCiz-4j_dD_GGUzM447UD39Hzo',
-    appId: '1:408021366021:ios:666bb082e7ba649bec736c',
-    messagingSenderId: '408021366021',
-    projectId: 'todoapp-64a62',
-    storageBucket: 'todoapp-64a62.appspot.com',
-    iosBundleId: 'com.example.todo.RunnerTests',
+    apiKey: 'AIzaSyDjj_tjWL9o7kk8hyT7afHJ5NC9cEe94DA',
+    appId: '1:587119900259:ios:2627459e0d7aa68e2b2a56',
+    messagingSenderId: '587119900259',
+    projectId: 'tiktok-12a13',
+    storageBucket: 'tiktok-12a13.appspot.com',
+    iosClientId: '587119900259-3qkcjig0809venlk0jdm0hc3imvn6oq5.apps.googleusercontent.com',
+    iosBundleId: 'com.example.tiktokPractice',
   );
 }
