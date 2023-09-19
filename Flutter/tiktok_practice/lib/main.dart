@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_practice/constants/gaps.dart';
 import 'package:tiktok_practice/constants/sizes.dart';
-import 'package:tiktok_practice/screens/sign_up/sign_up_sceen.dart';
+import 'package:tiktok_practice/features/authentication/login_screen.dart';
 
 void main() {
   runApp(const TikTokApp());
@@ -14,10 +13,23 @@ class TikTokApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'TikTok Practice',
-        theme: ThemeData(
-          primaryColor: const Color(0xFFE9435A),
+      debugShowCheckedModeBanner: false,
+      title: 'TikTok Practice',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        primaryColor: const Color(0xFFE9435A),
+        appBarTheme: const AppBarTheme(
+          foregroundColor: Colors.black87,
+          backgroundColor: Colors.white,
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: Sizes.size16 + Sizes.size2,
+            fontWeight: FontWeight.w600,
+          ),
         ),
-        home: const SignUpScreen());
+      ),
+      home: const LoginScreen(),
+    );
   }
 }
