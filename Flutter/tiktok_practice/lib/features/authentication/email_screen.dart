@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_practice/constants/gaps.dart';
 import 'package:tiktok_practice/constants/sizes.dart';
+import 'package:tiktok_practice/features/authentication/password_screen.dart';
 import 'package:tiktok_practice/features/authentication/widgets/form_button.dart';
 
 class EmailScreen extends StatefulWidget {
@@ -37,50 +38,72 @@ class _EmailScreenState extends State<EmailScreen> {
     final regExp = RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
     if (!regExp.hasMatch(_email)) {
-      return "Not valid";
-      return null;
+      return "Email Not valid";
     }
     return null;
   }
 
+  void _onScaffoldTap() {
+    FocusScope.of(context).unfocus();
+  }
+
+  void _onSubmit() {
+    if (_email.isEmpty || _isEmailValid() != null) return;
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const PasswordScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Sign Up',
+    return GestureDetector(
+      onTap: _onScaffoldTap,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Sign Up',
+          ),
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: Sizes.size36),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Gaps.v40,
-            const Text(
-              "What is your email?",
-              style: TextStyle(
-                fontSize: Sizes.size24,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            Gaps.v16,
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(
-                hintText: 'Email',
-                errorText: _isEmailValid(),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.grey.shade400,
-                  ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: Sizes.size36),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Gaps.v40,
+              const Text(
+                "What is your email?",
+                style: TextStyle(
+                  fontSize: Sizes.size24,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              cursorColor: Theme.of(context).primaryColor,
-            ),
-            Gaps.v28,
-            FormButton(disabled: _email.isEmpty)
-          ],
+              Gaps.v16,
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                onEditingComplete: _onSubmit,
+                autocorrect: false,
+                controller: _emailController,
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  errorText: _isEmailValid(),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey.shade400,
+                    ),
+                  ),
+                ),
+                cursorColor: Theme.of(context).primaryColor,
+              ),
+              Gaps.v28,
+              GestureDetector(
+                  onTap: _onSubmit,
+                  child: FormButton(
+                      disabled: _email.isEmpty || _isEmailValid() != null))
+            ],
+          ),
         ),
       ),
     );
