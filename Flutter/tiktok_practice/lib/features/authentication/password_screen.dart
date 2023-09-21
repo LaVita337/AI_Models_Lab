@@ -35,8 +35,15 @@ class _PasswordScreenState extends State<PasswordScreen> {
     super.dispose();
   }
 
-  bool _isPasswordValid() {
-    return _password.isNotEmpty && _password.length > 8;
+  bool _isPasswordValidCond1() {
+    return _password.isNotEmpty && _password.length >= 8;
+  }
+
+  bool _isPasswordValidCond2() {
+    final regExp = RegExp(
+        r'^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+`={}|[\]:;"<>,.?/~-]).+$');
+
+    return regExp.hasMatch(_password);
   }
 
   void _onScaffoldTap() {
@@ -44,7 +51,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
   }
 
   void _onSubmit() {
-    if (!_isPasswordValid()) return;
+    if (!_isPasswordValidCond1() && !_isPasswordValidCond2()) return;
+
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -127,7 +135,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
               ),
               Gaps.v10,
               const Text(
-                'Your password mush have:',
+                'Your password must have:',
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
               Gaps.v10,
@@ -136,7 +144,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   FaIcon(
                     FontAwesomeIcons.circleCheck,
                     size: Sizes.size20,
-                    color: _isPasswordValid()
+                    color: _isPasswordValidCond1()
                         ? Colors.green
                         : Colors.grey.shade400,
                   ),
@@ -153,7 +161,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   FaIcon(
                     FontAwesomeIcons.circleCheck,
                     size: Sizes.size20,
-                    color: _isPasswordValid()
+                    color: _isPasswordValidCond2()
                         ? Colors.green
                         : Colors.grey.shade400,
                   ),
@@ -168,7 +176,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
               GestureDetector(
                 onTap: _onSubmit,
                 child: FormButton(
-                  disabled: !_isPasswordValid(),
+                  disabled:
+                      !_isPasswordValidCond1() || !_isPasswordValidCond2(),
                 ),
               ),
             ],
