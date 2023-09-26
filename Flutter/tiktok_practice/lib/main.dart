@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_practice/constants/sizes.dart';
-import 'package:tiktok_practice/features/authentication/login_screen.dart';
+import 'package:tiktok_practice/features/main_navigation/main_navigation_screen.dart';
 
 void main() {
   runApp(const TikTokApp());
@@ -29,7 +29,7 @@ class TikTokApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const LoginScreen(),
+      home: const MainNavitationScreen(),
     );
   }
 }
