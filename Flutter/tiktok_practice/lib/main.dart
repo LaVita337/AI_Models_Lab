@@ -1,13 +1,13 @@
+import 'package:TikTok/features/main_navigation/main_navigation_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:tiktok_practice/constants/sizes.dart';
-import 'package:tiktok_practice/features/main_navigation/main_navigation_screen.dart';
+import 'package:TikTok/constants/sizes.dart';
 
 void main() {
-  runApp(const TikTokApp());
+  runApp(const TickTokApp());
 }
 
-class TikTokApp extends StatelessWidget {
-  const TikTokApp({super.key});
+class TickTokApp extends StatelessWidget {
+  const TickTokApp({super.key});
 
   // This widget is the root of your application.
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tiktok_practice/constants/sizes.dart';
+import 'package:TikTok/constants/sizes.dart';
 
 class PostVideoButton extends StatefulWidget {
   final Function onTap;
@@ -64,9 +64,9 @@ class _PostVideoButtonState extends State<PostVideoButton>
                   width: 25,
                   decoration: BoxDecoration(
                     color: Colors.grey.shade600,
-                    borderRadius: BorderRadius.circular(Sizes.size8),
+                    borderRadius: BorderRadius.circular(Sizes.size12),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: Sizes.size11),
+                  padding: const EdgeInsets.symmetric(horizontal: Sizes.size12),
                 ),
               ),
               Positioned(
@@ -76,9 +76,9 @@ class _PostVideoButtonState extends State<PostVideoButton>
                   width: 25,
                   decoration: BoxDecoration(
                     color: Colors.grey.shade600,
-                    borderRadius: BorderRadius.circular(Sizes.size8),
+                    borderRadius: BorderRadius.circular(Sizes.size12),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: Sizes.size11),
+                  padding: const EdgeInsets.symmetric(horizontal: Sizes.size12),
                 ),
               ),
               Container(
@@ -86,7 +86,7 @@ class _PostVideoButtonState extends State<PostVideoButton>
                 padding: const EdgeInsets.symmetric(horizontal: Sizes.size10),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(Sizes.size6)),
+                    borderRadius: BorderRadius.circular(25)),
                 child: const Center(
                   child: FaIcon(
                     FontAwesomeIcons.plus,

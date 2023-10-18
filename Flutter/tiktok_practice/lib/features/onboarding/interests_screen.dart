@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_practice/constants/gaps.dart';
-import 'package:tiktok_practice/constants/sizes.dart';
-import 'package:tiktok_practice/features/onboarding/tutorial_screen.dart';
-import 'package:tiktok_practice/features/onboarding/widgets/interest_button.dart';
+import 'package:TikTok/constants/gaps.dart';
+import 'package:TikTok/constants/sizes.dart';
+import 'package:TikTok/features/onboarding/tutorial_screen.dart';
+import 'package:TikTok/features/onboarding/widgets/interest_button.dart';
 
 const interests = [
   "Daily Life",
