@@ -29,7 +29,7 @@ class TickTokApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MainNavitationScreen(),
+      home: const MainNavigationScreen(),
     );
   }
 }

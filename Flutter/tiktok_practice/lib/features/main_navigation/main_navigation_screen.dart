@@ -7,14 +7,14 @@ import 'package:TikTok/features/main_navigation/widgets/nav_tab.dart';
 import 'package:TikTok/features/main_navigation/widgets/post_video_button.dart';
 import 'package:TikTok/features/videos/video_timeline_screen.dart';
 
-class MainNavitationScreen extends StatefulWidget {
-  const MainNavitationScreen({super.key});
+class MainNavigationScreen extends StatefulWidget {
+  const MainNavigationScreen({super.key});
 
   @override
-  State<MainNavitationScreen> createState() => _MainNavitationScreenState();
+  State<MainNavigationScreen> createState() => _MainNavigationScreenState();
 }
 
-class _MainNavitationScreenState extends State<MainNavitationScreen> {
+class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 1;
 
   void _onTap(int index) {
