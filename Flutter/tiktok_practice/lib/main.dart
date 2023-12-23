@@ -1,4 +1,4 @@
-import 'package:TikTok/features/main_navigation/main_navigation_screen.dart';
+import 'package:TikTok/features/inbox/activity_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:TikTok/constants/sizes.dart';
 
@@ -16,6 +16,12 @@ class TickTokApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'App Practice',
       theme: ThemeData(
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Color(0xFFE9435A),
+          selectionHandleColor: Color(0xFFE9435A),
+        ),
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color(0xFFE9435A),
         appBarTheme: const AppBarTheme(
@@ -29,7 +35,7 @@ class TickTokApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MainNavigationScreen(),
+      home: const ActivityScreen(),
     );
   }
 }
